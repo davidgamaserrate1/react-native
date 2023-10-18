@@ -1,10 +1,11 @@
 import React from "react";
 import { SafeAreaView, StyleSheet, Text } from "react-native";
+import styles from "../../styles";
 
 export default props =>{
     return(
         <SafeAreaView  style={style.Container}>
-            <Text style={style.Numero}>
+            <Text style={[style.Numero, styles.fontG]}>
                 {props.numero}
             </Text>
         </SafeAreaView>
@@ -17,11 +18,15 @@ const style = StyleSheet.create({
         width:50,
         backgroundColor:'#000',
         margin:6,
-        borderRadius:25
-        
+        borderRadius:25,
     },
     Numero:{
-        Color: '#fff'
+        color: '#fff',
+        justifyContent:'center',
+        alignItems:'center',
+        textAlign:'center',         
+        justifyContent:'center',
+         
     }
 
 })

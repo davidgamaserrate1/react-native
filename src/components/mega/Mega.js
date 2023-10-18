@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import { Button, SafeAreaView, Text, TextInput } from "react-native";
 import Numero from "./Numero";
-
+import styles from "../../styles";
 
 export default class Mega extends Component {
 
@@ -44,9 +44,9 @@ export default class Mega extends Component {
 
     exibirNUmeros = () =>{
         const nums = this.state.numeros
-       return  nums.map( num => {
-        <Numero numero={num}/> 
-       })
+       return  nums.map( num => (
+            <Numero key={num} numero={num}/>
+         ))
     }
 
     render(){
@@ -69,9 +69,12 @@ export default class Mega extends Component {
                     onPress={this.gerarNumero}
                 />
 
-                
-                {/* {this.exibirNUmeros()} */}
-                
+                <SafeAreaView 
+                style={styles.numbersContainer}
+                >
+                    {this.exibirNUmeros()}
+                </SafeAreaView>
+              
              
                
                 
